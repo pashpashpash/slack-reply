@@ -27,6 +27,8 @@ A Chrome extension that adds a Reply button to Slack messages for quoting messag
 
 <img width="381" height="125" alt="Screenshot 2025-08-07 at 10 14 23 PM" src="https://github.com/user-attachments/assets/4bdf94d0-f157-42de-9527-90417f223660" />
 
+<img width="660" height="166" alt="Screenshot 2025-08-07 at 10 19 47 PM" src="https://github.com/user-attachments/assets/210a0aa1-eb73-4e7c-b9c0-cda162bd4d72" />
+
 
 ## Usage
 
@@ -39,3 +41,5 @@ Works with Chrome browser on all Slack workspaces (app.slack.com and *.slack.com
 ## Privacy
 
 This extension only runs on Slack domains and does not collect, store, or transmit any user data.
+
+Made by [@pashmerepat](https://twitter.com/pashmerepat)
