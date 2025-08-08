@@ -11,7 +11,8 @@ https://github.com/user-attachments/assets/92416c41-1823-4540-b97b-576d23865f97
 
 ## One-click Installation Through Chrome's web store
 
-https://chromewebstore.google.com/detail/slack-quote-reply/pdcbmlagpaekggljpppikllelalicmdi
+1. Download the extension here: https://chromewebstore.google.com/detail/slack-quote-reply/pdcbmlagpaekggljpppikllelalicmdi
+
 <img width="1147" height="731" alt="Screenshot 2025-08-08 at 9 30 40 AM" src="https://github.com/user-attachments/assets/f1c39abf-de71-4958-acf7-468972effff9" />
 
 ## Manual Installation
