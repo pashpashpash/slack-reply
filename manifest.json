@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Slack Quote Reply",
+  "version": "1.0.0",
+  "description": "Adds a Reply button to Slack that quotes the selected message into the composer with a proper @mention.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.slack.com/*",
+        "https://*.slack.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
