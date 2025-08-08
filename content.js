@@ -3,7 +3,7 @@
 
   // Configuration: tweak if Slack changes DOM
   const SELECTORS = {
-    actionsGroup: '[data-qa="message-actions"], .c-message_actions__group',
+    actionsGroup: '[data-qa="message-actions"]:not(.c-file__actions), .c-message_actions__group:not(.c-file__actions)',
     messageContainer: '[data-qa="message_container"]',
     authorButton: '[data-qa="message_sender_name"]',
     messageText: '[data-qa="message-text"], .p-rich_text_block',
