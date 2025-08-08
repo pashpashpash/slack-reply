@@ -9,7 +9,12 @@ https://github.com/user-attachments/assets/92416c41-1823-4540-b97b-576d23865f97
 
 <img width="48" height="48" alt="Screenshot 2025-08-07 at 10 09 48 PM" src="https://github.com/user-attachments/assets/2f4fc771-deae-4c42-86cd-8e1a005c8622" />
 
-## Installation
+## One-click Installation Through Chrome's web store
+
+https://chromewebstore.google.com/detail/slack-quote-reply/pdcbmlagpaekggljpppikllelalicmdi
+<img width="1147" height="731" alt="Screenshot 2025-08-08 at 9 30 40 AM" src="https://github.com/user-attachments/assets/f1c39abf-de71-4958-acf7-468972effff9" />
+
+## Manual Installation
 
 1. Clone this repository:
    ```
