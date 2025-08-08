@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/92416c41-1823-4540-b97b-576d23865f97
 
 1. Clone this repository:
    ```
-   git clone [repository-url]
+   git clone git@github.com:pashpashpash/slack-reply.git
    ```
 
 2. Open Chrome and navigate to `chrome://extensions/`
