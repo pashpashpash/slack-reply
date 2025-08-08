@@ -120,7 +120,34 @@
     return rect.width > 0 && rect.height > 0 && style.visibility !== 'hidden' && style.display !== 'none';
   }
 
-  function getActiveComposer() {
+  function getActiveComposer(contextElement = null) {
+    // If we have context (e.g., from a clicked reply button), try to find the appropriate composer
+    if (contextElement) {
+      // Check if the context is within a thread pane (RHS)
+      const threadPane = contextElement.closest('[data-qa="rhs_container"], [aria-label*="Thread"], [data-qa*="thread"], .p-threads_view__default_background');
+      
+      if (threadPane) {
+        // Look for thread composer within the thread pane
+        const threadComposer = threadPane.querySelector(SELECTORS.composerPreferred) || 
+                              threadPane.querySelector(SELECTORS.composerFallback);
+        if (threadComposer && isVisible(threadComposer)) {
+          return threadComposer;
+        }
+      } else {
+        // Context is in main channel, look for main composer (exclude thread panes)
+        const allComposers = Array.from(document.querySelectorAll(SELECTORS.composerPreferred + ', ' + SELECTORS.composerFallback));
+        for (const composer of allComposers) {
+          if (!isVisible(composer)) continue;
+          // Skip if this composer is inside a thread pane
+          const inThreadPane = composer.closest('[data-qa="rhs_container"], [aria-label*="Thread"], [data-qa*="thread"], .p-threads_view__default_background');
+          if (!inThreadPane) {
+            return composer;
+          }
+        }
+      }
+    }
+
+    // Fallback to original logic when no context is provided
     // Prefer the currently focused contenteditable if it matches a composer
     const ae = document.activeElement;
     if (ae && ae.matches && ae.matches(SELECTORS.composerFallback) && isVisible(ae)) {
@@ -146,9 +173,9 @@
     sel.addRange(range);
   }
 
-  function insertIntoComposer(text) {
+  function insertIntoComposer(text, contextElement = null) {
     if (!text) return;
-    const composer = getActiveComposer();
+    const composer = getActiveComposer(contextElement);
     if (!composer) return;
 
     composer.focus();
@@ -362,13 +389,13 @@
     return null;
   }
 
-  async function createMentionEntity(displayName, userId) {
-    const composer = getActiveComposer();
+  async function createMentionEntity(displayName, userId, contextElement = null) {
+    const composer = getActiveComposer(contextElement);
     if (!composer) return false;
     composer.focus();
 
     // Type "@{displayName}" to trigger Slack's autosuggest
-    insertIntoComposer(`@${displayName}`);
+    insertIntoComposer(`@${displayName}`, contextElement);
 
     // Wait briefly for the typeahead to render and try to click the right option
     const deadline = Date.now() + 900;
@@ -409,18 +436,21 @@
       const lines = fullText.trim().split(/\r?\n/);
       if (!lines.length) return;
 
+      // Use the message element as context to determine the correct composer
+      const contextElement = messageEl;
+
       // First quoted line: "> " + real mention entity + " " + text
-      insertIntoComposer('> ');
-      await createMentionEntity(displayName, userId);
-      insertIntoComposer(' ' + lines[0] + '\n');
+      insertIntoComposer('> ', contextElement);
+      await createMentionEntity(displayName, userId, contextElement);
+      insertIntoComposer(' ' + lines[0] + '\n', contextElement);
 
       // Remaining quoted lines
       for (let i = 1; i < lines.length; i++) {
-        insertIntoComposer('> ' + lines[i] + '\n');
+        insertIntoComposer('> ' + lines[i] + '\n', contextElement);
       }
 
       // Blank line after quote, caret ready for typing
-      insertIntoComposer('\n');
+      insertIntoComposer('\n', contextElement);
     } catch {
       // Silently ignore to avoid breaking Slack UI
     }
