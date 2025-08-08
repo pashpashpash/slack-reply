@@ -1,6 +1,9 @@
+<img width="1280" height="800" alt="extension-screenshot-2" src="https://github.com/user-attachments/assets/f0c387ff-0909-4f38-a637-dc79e9319bd8" />
+
 # Slack Replies
 
 A Chrome extension that adds a Reply button to Slack messages for quoting messages with automatic @mentions.
+<img width="1280" height="800" alt="screenshot-1" src="https://github.com/user-attachments/assets/d0607059-4169-4384-8ee1-b0181a333876" />
 
 https://github.com/user-attachments/assets/92416c41-1823-4540-b97b-576d23865f97
 
