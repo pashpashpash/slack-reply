@@ -2,9 +2,9 @@
 
 https://github.com/user-attachments/assets/92416c41-1823-4540-b97b-576d23865f97
 
-<img width="353" height="353" alt="Screenshot 2025-08-07 at 10 09 48 PM" src="https://github.com/user-attachments/assets/2f4fc771-deae-4c42-86cd-8e1a005c8622" />
-
 A Chrome extension that adds a Reply button to Slack messages for quoting messages with automatic @mentions.
+
+<img width="48" height="48" alt="Screenshot 2025-08-07 at 10 09 48 PM" src="https://github.com/user-attachments/assets/2f4fc771-deae-4c42-86cd-8e1a005c8622" />
 
 ## Installation
 
