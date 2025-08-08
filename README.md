@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/92416c41-1823-4540-b97b-576d23865f97
    git clone git@github.com:pashpashpash/slack-reply.git
    ```
 
-2. Open Chrome and navigate to [chrome://extensions/](chrome://extensions/)
+2. Open Chrome and navigate to `chrome://extensions/` in your browser tab
 
 <img width="3008" height="1494" alt="setup" src="https://github.com/user-attachments/assets/017c1a7e-4a6c-4f40-ad0a-aedddf042d0b" />
 
